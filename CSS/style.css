@@ -1,8 +1,8 @@
-/*CSS Index*/
-/* Eliminar márgenes y padding del body y asegurar que no haya desplazamiento en ningún eje */
-* {
+*{
   box-sizing: border-box;
 }
+/*CSS Index*/
+/* Eliminar márgenes y padding del body y asegurar que no haya desplazamiento en ningún eje */
    /* Estilos para el body */
  body{
     margin: 0;
