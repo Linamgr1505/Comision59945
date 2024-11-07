@@ -1,0 +1,376 @@
+/*CSS Index*/
+   /* Estilos para el body */
+ body{
+    margin: 0;
+    font-family: sans-serif;
+ }
+   /* Estilos para los textos del menu principal */
+ a{
+    text-decoration: none;
+    color:black;
+ }
+   /* Estilos para el header */
+ header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100px;
+    background-color: white;
+ }
+   /* Estilos para el logo */
+ .logo{
+    display: flex;
+    align-items: center;
+ }
+   /* Estilos para el nombre principal */
+ .logo-nombre{
+    font-size: 2rem;
+    font-weight: bold;
+ }
+   /* Estilos para el logo */
+ .logo-img{
+    height: 150px;
+    margin-right: 15px;
+ }
+   /* Estilos para el nav */
+ .navbar{
+    border: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+ }
+ .navbar{
+    margin: 30px 0;
+ }
+ .navbar ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+ }
+ .navbar ul li a{
+    color: #111;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+ }
+ .navbar ul li a:hover{
+    opacity: 1;
+ }
+
+   /* Estilos para las seccion del video */
+       /* Estilo de la sección principal */
+       .seccion-salud-oral {
+        height: 400px;
+        width: 100%;
+        display: flex;
+      }
+  
+      /* Estilos para la parte izquierda (texto) */
+      .lado-izquierdovideo {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0; /* Fondo claro para diferenciar */
+      }
+  
+      /* Estilo para el texto en la parte izquierda */
+      .lado-izquierdovideo p {
+        font-size: 2rem;
+        color: #d4af37;
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+        max-width: 80%; /* Limita el ancho del texto */
+      }
+  
+      /* Estilos para la parte derecha (video) */
+      .lado-derechovideo {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e0e0e0; /* Fondo claro para diferenciar */
+      }
+  
+      /* Estilo del video para que ocupe un tamaño óptimo */
+      .lado-derechovideo video {
+        width: 30%;
+        max-width: 500px;
+        border-radius: 10px; /* Bordes redondeados para el video */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+      }
+
+   /* Estilos para las imagenes en la parte superior */
+ .Imagenes-inferiores {
+    width: 100%;
+    height: 350px; 
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    align-items: center;
+    background-color: #000000;
+    border: 1px dotted #000000;
+ }
+
+ .fotos-index{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px; /* Bordes redondeados para el video */
+ }
+    /* Estilos para la sección principal */
+ .seccion-tratamientos {
+    height: 250px;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+ }
+    /* Estilos para cada subsección */
+ h2{
+    text-align: center;
+ }
+   /* Estilos para cada subsección */
+ tratamiento-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%; /* Esto asegura que cada subsección ocupe el mismo ancho */
+    text-align: center;
+ }
+    /* Estilo para la imagen de cada subsección */
+ .tratamiento-item img {
+    width: 280px;
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px; /* Bordes redondeados para el video */
+    background-color: #ddd; /* Fondo gris claro para representar la imagen */
+ }
+    /* Estilo para el subtítulo de cada subsección */
+ .tratamiento-item h3 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    text-align: center;
+ }
+
+    /* Estilo para la sección del formulario 1*
+    /* Estilo de la sección izquierda */
+ .seccion-implantes {
+    height: 800px;
+    width: 100%;
+    display: flex;
+ }
+  
+    /* Estilos para la parte izquierda (texto) */
+ .lado-izquierdo {
+    width: 50%;
+    padding: 40px;
+    color: #000000; /* Color dorado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    }
+  
+      /* Estilos para la parte derecha (formulario) */
+ .lado-derecho {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    }
+  
+      /* Estilo del formulario */
+    .formulario-contacto {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+  
+      /* Estilos para los inputs, select y el botón */
+    .formulario-contacto input,
+    .formulario-contacto select,
+    .formulario-contacto button {
+     padding: 10px;
+     font-size: 1rem;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+    }
+  
+      /* Estilo del botón de enviar */
+    .formulario-contacto button {
+     background-color: #d4af37; /* Color dorado */
+     color: #fff;
+     border: none;
+     cursor: pointer;
+     font-weight: bold;
+     transition: background-color 0.3s;
+    }
+  
+    .formulario-contacto button:hover {
+    background-color: #b18e2a; /* Color dorado más oscuro al hacer hover */
+ }
+
+
+
+/*CSS nosotros*/
+
+.foto-odontologos{
+    width: auto;
+    height: 150px;
+    border-radius: 10px; /* Bordes redondeados para el video */
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 992px) {
+    .navbar ul li a {
+        font-size: 1.1em;
+    }
+
+    .logo-nombre {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .seccion-salud-oral,
+    .seccion-implantes {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .lado-izquierdovideo,
+    .lado-derechovideo,
+    .lado-izquierdo,
+    .lado-derecho {
+        width: 100%;
+    }
+
+    .lado-izquierdovideo p,
+    .lado-izquierdo p {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .tratamiento-item {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .seccion-tratamientos {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .formulario-contacto {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li a {
+        font-size: 1em;
+        margin: 10px;
+    }
+
+    .tratamiento-item {
+        width: 100%;
+    }
+
+    .logo-nombre {
+        font-size: 1.5rem;
+    }
+
+    .socialIcons a i {
+        font-size: 1.5em;
+    }
+}
+
+/*CSS citas*/
+
+
+/*CSS tratamientos*/
+
+
+
+/*CSS promociones*/
+
+footer{
+    background-color: #111;
+}
+.footerContenedor{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+/*Efecto Hover en los iconos de social media*/
+.socialIcons a:hover{
+    background-color:#111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+/*Footer*/
+.FooterNav{
+    margin: 30px 0;
+}
+.FooterNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.FooterNav ul li a{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.FooterNav ul li a:hover{
+    opacity: 1;
+}
+.footerBase{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+.footerBase p{
+    color: white;
+}
