@@ -307,11 +307,110 @@
 /*CSS citas*/
 
 
+/*CSS Nosotros*/
+
+/* Sección Nuestro Equipo */
+.nuestro-equipo {
+  height: 800px;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.nuestro-equipo h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de los elementos del equipo */
+.equipo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  gap: 20px;
+}
+
+.equipo-item {
+  width: 45%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: transform 0.3s;
+  min-height: 600px;
+}
+
+.equipo-item:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del equipo */
+.equipo-item img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Texto dentro de la sección de equipo */
+.equipo-texto h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.equipo-texto p {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .equipo-container {
+      flex-direction: column;
+  }
+
+  .equipo-item {
+      width: 80%;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nuestro-equipo h2 {
+      font-size: 2rem;
+  }
+
+  .equipo-texto h3 {
+      font-size: 1.3rem;
+  }
+
+  .equipo-texto p {
+      font-size: 0.9rem;
+  }
+}
+
 /*CSS tratamientos*/
 
 
 
 /*CSS promociones*/
+
+
+/*CSS Footer*/
 
 footer{
     background-color: #111;
