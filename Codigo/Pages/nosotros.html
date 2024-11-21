@@ -3,71 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/logo-favicon.svg" type="image/x-icon">
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">
-          <img src="../assets/logo.jpg" alt="logo maca" class="logo-img">
-          <p class="logo-nombre">MACA DENTAL GROUP</p>
-        </a>
-        <div class="navbar">
-          <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../Pages/citas.html">Pedir cita</a></li>
-            <li><a href="../Pages/tratamientos.html">Tratamientos</a></li>
-            <li><a href="../Pages/promociones.html">Promociones</a></li>
-            <li><a href="../Pages/nosotros.html">Nosotros</a></li>
-            <li><a href="../Pages/portal.html">Portal pacientes</a></li>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-          </ul>
+    <!-- Header -->
+    <header class="header">
+      <a href="#" class="header__logo">
+        <img src="../assets/logo.jpg" alt="logo maca" class="header__logo-img">
+        <div class="header__logo-title">
+          <span class="header__logo-title--main">MACA</span>
+          <span class="header__logo-title--secondary">DENTAL GROUP</span>
         </div>
+      </a>
+      <nav class="header__navbar">
+        <ul class="header__navbar-list">
+          <li class="header__navbar-list-item"><a href="../index.html" class="header__navbar-list-item-link">Inicio</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/citas.html" class="header__navbar-list-item-link">Pedir cita</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/tratamientos.html" class="header__navbar-list-item-link">Tratamientos</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/promociones.html" class="header__navbar-list-item-link">Promociones</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/nosotros.html" class="header__navbar-list-item-link">Nosotros</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/portal.html" class="header__navbar-list-item-link">Portal pacientes</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <section class="nuestro-equipo">
-      <h2>Nuestro Equipo</h2>
-      <div class="equipo-container">
-          <!-- Primera subsección -->
-          <div class="equipo-item">
-            <img src="../assets/mafe.jpg" alt="Foto Mafe">
-              <div class="equipo-texto">
-                  <h3>Maria Fernanda Gil</h3>
-                  <p>Odontóloga egresada de la Universidad Nacional, especialista en administración de la salud y diseño de sonrisa.</p>
-              </div>
-          </div>
-
-          <!-- Segunda subsección -->
-          <div class="equipo-item">
-              <img src="../assets/camilo.jpg" alt="Foto Camilo">
-              <div class="equipo-texto">
-                  <h3>Camilo Silva</h3>
-                  <p>Odontólogo egresada de la Universidad Nacional, especialista en cirugía.</p>
-              </div>
-          </div>
+    <!-- Nuestro Equipo -->
+    <section class="team">
+      <h2 class="team__title">Nuestro Equipo</h2>
+      <div class="team__grid">
+        <!-- Primera fila -->
+        <div class="team__member">
+          <img src="../assets/mafe.jpg" alt="Foto de Maria Fernanda Gil" class="team__member-photo">
+          <h3 class="team__member-name">Maria Fernanda Gil</h3>
+          <p class="team__member-description">Odontóloga egresada de la Universidad Nacional, especialista en administración de la salud y diseño de sonrisa.</p>
+        </div>
+        <!-- Segunda fila -->
+        <div class="team__member">
+          <img src="../assets/camilo.jpg" alt="Foto de Camilo Silva" class="team__member-photo">
+          <h3 class="team__member-name">Camilo Silva</h3>
+          <p class="team__member-description">Odontólogo egresado de la Universidad Nacional, especialista en cirugía.</p>
+        </div>
       </div>
-  </section>
+    </section>
+    
 
-  <footer>
-    <div class="footer-contenedor">
-      <div class="social-icons">
-        <a href=""><i class="fa-brands fa-facebook"></i></a>
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-      <div class="footer-nav">
-        <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./Pages/citas.html">Pedir cita</a></li>
-          <li><a href="./Pages/tratamientos.html">Tratamientos</a></li>
-          <li><a href="./Pages/promociones.html">Promociones</a></li>
-          <li><a href="./Pages/nosotros.html">Nosotros</a></li>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__container-social-icons">
+          <a href="#" class="footer__container-social-icons-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="footer__container-social-icons-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer__container-social-icons-link"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <ul class="footer__container-nav-list">
+          <li class="footer__container-nav-list-item"><a href="./index.html" class="footer__container-nav-list-item-link">Inicio</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/citas.html" class="footer__container-nav-list-item-link">Pedir cita</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/tratamientos.html" class="footer__container-nav-list-item-link">Tratamientos</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/promociones.html" class="footer__container-nav-list-item-link">Promociones</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/nosotros.html" class="footer__container-nav-list-item-link">Nosotros</a></li>
         </ul>
       </div>
-  </div>
-  <div class="footer-base">
-    <p>Diseñado por Lina Gil Rodríguez</p>
-  </div>
-  </footer>
+      <div class="footer__base">
+        <p class="footer__base-text">Diseñado por Lina Gil Rodríguez</p>
+      </div>
+    </footer>
 </body>
 </html>

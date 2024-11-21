@@ -3,84 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/logo-favicon.svg" type="image/x-icon">
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">
-          <img src="../assets/logo.jpg" alt="logo maca" class="logo-img">
-          <p class="logo-nombre">MACA DENTAL GROUP</p>
-        </a>
-        <div class="navbar">
-          <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../Pages/citas.html">Pedir cita</a></li>
-            <li><a href="../Pages/tratamientos.html">Tratamientos</a></li>
-            <li><a href="../Pages/promociones.html">Promociones</a></li>
-            <li><a href="../Pages/nosotros.html">Nosotros</a></li>
-            <li><a href="../Pages/portal.html">Portal pacientes</a></li>
-          </ul>
+    <!-- Header -->
+    <header class="header">
+      <a href="#" class="header__logo">
+        <img src="../assets/logo.jpg" alt="logo maca" class="header__logo-img">
+        <div class="header__logo-title">
+          <span class="header__logo-title--main">MACA</span>
+          <span class="header__logo-title--secondary">DENTAL GROUP</span>
         </div>
+      </a>
+      <nav class="header__navbar">
+        <ul class="header__navbar-list">
+          <li class="header__navbar-list-item"><a href="../index.html"header__navbar-list-item-link">Inicio</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/citas.html" class="header__navbar-list-item-link">Pedir cita</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/tratamientos.html" class="header__navbar-list-item-link">Tratamientos</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/promociones.html" class="header__navbar-list-item-link">Promociones</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/nosotros.html" class="header__navbar-list-item-link">Nosotros</a></li>
+          <li class="header__navbar-list-item"><a href="../Pages/portal.html" class="header__navbar-list-item-link">Portal pacientes</a></li>
+        </ul>
+      </nav>
     </header>
-    <div class="contenedor1">
-    <dl>
-        <dt>Periodoncia</dt>
-        <img src="../assets/periodoncia.png" class="foto-odontologos" alt="Periodoncia">
-        <dl>La Periodoncia trata todas las enfermedades periodontales producidas por acumulación de cálculo y placa bacteriana. En las clínicas dentales Dentix, contamos con profesionales cualificados con amplia experiencia en tratamientos de periodontitis.</dl>
-        <dt>Ortodoncia</dt>
-        <img src="../assets/ortodoncia.png" class="foto-odontologos" alt="Ortodoncia">
-        <dl>La ortodoncia corrige los defectos de la posición dental para mantener una boca perfecta y sana. En las clínicas dentales Dentix, somos especialistas en ortodoncia y realizamos diferentes tipos de tratamientos para adaptarnos a tus necesidades.</dl>
-        <dt>Endodoncia</dt>
-        <img src="..//assets/endodoncia.png" class="foto-odontologos" alt="Endodoncia">
-        <dl>Es también conocida como tratamiento de conductos, se refiere a un procedimiento altamente utilizado por los especialistas en odontología para retirar por completo la pulpa dentaria dañada. Contamos con especialistas en endodoncia para que no pierdas tu pieza dental</dl>
-        <dt>Protesis dental</dt>
-        <img src="../assets/protesis-dental.png" class="foto-odontologos" alt="Protesis dental">
-        <dl>En Dentix te garantizamos que podrás recuperar la comodidad, la sonrisa, y por supuesto el hecho de sentirte seguro y a gusto contigo mismo.</dl>
-        <dt>Implantes dentales</dt>
-        <img src="../assets/implantes-dentales.png" class="foto-odontologos" alt="Implantes dentales">
-        <dl>En las clínicas dentales Dentix somos especialistas en implantología dental y disponemos de un equipo de expertos en odontología que cuentan con tecnología de vanguardia para realizar los tratamientos dentales.</dl>
-        <dt>Limpieza dental</dt>
-        <img src="../assets/limpieza-dental.png" class="foto-odontologos" alt="Limpieza dental">
-        <dl>La limpieza dental más conocida como profilaxis tiene diferentes funciones como proteger el esmalte y eliminar lo acumulado en los dientes y debajo de las encías, a lo que le llamamos placa dental. Mejora el aspecto de tu sonrisa con una correcta higiene bucal, indispensable para mantener una boca sana y bonita.</dl>
-        <dt>Caries</dt>
-        <img src="../assets/caries.png" class="foto-odontologos" alt="Caries">
-        <dl>La caries dental es la afección bucal de mayor incidencia y prevalencia en el mundo, puede producirse por bacterias, azúcares, entre otros. El tratamiento de caries nos ayudará a hacer una limpieza dental que mejore tu salud bucal.</dl>
-        <dt>Ortodoncia invisible</dt>
-        <img src="../assets/ortodoncia-invisible.png" class="foto-odontologos" alt="Ortodoncia invisible">
-        <dl>La ortodoncia modifica la posición de las piezas dentales, pero a veces, los brackets o frenillos convencionales pueden resultar molestos o no gustar estéticamente. Por ello, en clínicas Dentix, sumamos a nuestros tratamientos la ortodoncia invisible, una manera casi imperceptible de corregir tu sonrisa.</dl>
-        <dt>Blanqueamiento dental</dt>
-        <img src="../assets/blanqueamiento-dental.png" class="foto-odontologos" alt="Blanqueamiento dental">
-        <dl>El blanqueamiento dental es un procedimiento de odontología estética que busca un aclaramiento mediante la eliminación de manchas dentales. Para poder blanquearlos, existen diferentes tipos de tratamientos que nos devolverán el buen color a nuestra sonrisa.</dl>
-        <dt>Estética dental</dt>
-        <img src="../assets/estetica-dental.png" class="foto-odontologos" alt="Estética dental">
-        <dl>Cada vez son más los pacientes que se preocupan por tener una boca sana, además de una bonita sonrisa. Los tratamientos de estética, suministros y servicios dentales pueden ser combinados entre ellos, si es necesario, para conseguir el mejor diseño dental.</dl>
-        <dt>Diseño de sonrisa</dt>
-        <img src="../assets/diseño-de-sonrisa.png" class="foto-odontologos" alt="Diseño de sonrisa">
-        <dl>Sabemos la importancia de una sonrisa y por eso entendemos que el diseño de esta debe ser acorde a lo que quieres acompañado por un buen ortodoncista. La sonrisa es para la mayoría de las personas la mejor carta de presentación que puede existir y si tienes un buen dibujo de sonrisa puedes sobresalir</dl>
-    </dl>
-  </div>
-  <footer>
-    <div class="footer-contenedor">
-      <div class="social-icons">
-        <a href=""><i class="fa-brands fa-facebook"></i></a>
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
-        <a href=""><i class="fa-brands fa-tiktok"></i></a>
-      </div>
-      <div class="footer-nav">
-        <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./Pages/citas.html">Pedir cita</a></li>
-          <li><a href="./Pages/tratamientos.html">Tratamientos</a></li>
-          <li><a href="./Pages/promociones.html">Promociones</a></li>
-          <li><a href="./Pages/nosotros.html">Nosotros</a></li>
+
+    <!-- Contenedor de los procedimientos -->
+    <section class="procedmientos">
+        <div class="procedmientos__container">
+            <!-- Tratamiento 1: Periodoncia -->
+            <div class="procedmientos__item">
+                <img src="../assets/periodoncia.png" alt="Periodoncia" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Periodoncia</h3>
+                    <p class="procedmientos__item-text">La Periodoncia trata todas las enfermedades periodontales producidas por acumulación de cálculo y placa bacteriana.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 2: Ortodoncia -->
+            <div class="procedmientos__item">
+                <img src="../assets/ortodoncia.png" alt="Ortodoncia" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Ortodoncia</h3>
+                    <p class="procedmientos__item-text">La ortodoncia corrige los defectos de la posición dental para mantener una boca perfecta y sana.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 3: Endodoncia -->
+            <div class="procedmientos__item">
+                <img src="../assets/endodoncia.png" alt="Endodoncia" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Endodoncia</h3>
+                    <p class="procedmientos__item-text">Es también conocida como tratamiento de conductos, se refiere a un procedimiento utilizado para retirar por completo la pulpa dentaria dañada.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 4: Prótesis Dental -->
+            <div class="procedmientos__item">
+                <img src="../assets/protesis-dental.png" alt="Protesis dental" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Protesis Dental</h3>
+                    <p class="procedmientos__item-text">En Dentix te garantizamos que podrás recuperar la comodidad, la sonrisa, y por supuesto el hecho de sentirte seguro.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 5: Implantes Dentales -->
+            <div class="procedmientos__item">
+                <img src="../assets/implantes-dentales.png" alt="Implantes dentales" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Implantes Dentales</h3>
+                    <p class="procedmientos__item-text">En las clínicas dentales Dentix somos especialistas en implantología dental.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 6: Limpieza Dental -->
+            <div class="procedmientos__item">
+                <img src="../assets/limpieza-dental.png" alt="Limpieza dental" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Limpieza Dental</h3>
+                    <p class="procedmientos__item-text">La limpieza dental más conocida como profilaxis tiene diferentes funciones como proteger el esmalte.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 7: Caries -->
+            <div class="procedmientos__item">
+                <img src="../assets/caries.png" alt="Caries" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Caries</h3>
+                    <p class="procedmientos__item-text">La caries dental es la afección bucal de mayor incidencia y prevalencia en el mundo.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 8: Ortodoncia Invisible -->
+            <div class="procedmientos__item">
+                <img src="../assets/ortodoncia-invisible.png" alt="Ortodoncia invisible" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Ortodoncia Invisible</h3>
+                    <p class="procedmientos__item-text">La ortodoncia modifica la posición de las piezas dentales, pero a veces, los brackets convencionales no son estéticamente agradables.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 9: Blanqueamiento Dental -->
+            <div class="procedmientos__item">
+                <img src="../assets/blanqueamiento-dental.png" alt="Blanqueamiento dental" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Blanqueamiento Dental</h3>
+                    <p class="procedmientos__item-text">El blanqueamiento dental es un procedimiento que busca aclarar los dientes eliminando manchas dentales.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 10: Estética Dental -->
+            <div class="procedmientos__item">
+                <img src="../assets/estetica-dental.png" alt="Estética dental" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Estética Dental</h3>
+                    <p class="procedmientos__item-text">Cada vez más pacientes se preocupan por tener una boca sana y una bonita sonrisa.</p>
+                </div>
+            </div>
+
+            <!-- Tratamiento 11: Diseño de Sonrisa -->
+            <div class="procedmientos__item">
+                <img src="../assets/diseño-de-sonrisa.png" alt="Diseño de sonrisa" class="procedmientos__item-image">
+                <div class="procedmientos__item-description">
+                    <h3 class="procedmientos__item-title">Diseño de Sonrisa</h3>
+                    <p class="procedmientos__item-text">Sabemos lo importante que es una sonrisa y entendemos que el diseño debe ser acorde a lo que deseas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__container-social-icons">
+          <a href="#" class="footer__container-social-icons-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="footer__container-social-icons-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer__container-social-icons-link"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <ul class="footer__container-nav-list">
+          <li class="footer__container-nav-list-item"><a href="./index.html" class="footer__container-nav-list-item-link">Inicio</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/citas.html" class="footer__container-nav-list-item-link">Pedir cita</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/tratamientos.html" class="footer__container-nav-list-item-link">Tratamientos</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/promociones.html" class="footer__container-nav-list-item-link">Promociones</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/nosotros.html" class="footer__container-nav-list-item-link">Nosotros</a></li>
         </ul>
       </div>
-  </div>
-  <div class="footer-base">
-    <p>Diseñado por Lina Gil Rodríguez</p>
-  </div>
-  </footer>
+      <div class="footer__base">
+        <p class="footer__base-text">Diseñado por Lina Gil Rodríguez</p>
+      </div>
+    </footer>
 </body>
 </html>

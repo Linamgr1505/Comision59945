@@ -1,0 +1,652 @@
+@import "utilities/variables";
+@import "base/reset";
+@import "base/fonts";
+@import "layout/button";
+@import "layout/footer";
+
+
+
+
+/* Mixin para sombras */
+@mixin shadow($color, $x, $y, $blur) {
+  box-shadow: $x $y $blur $color;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  color: $color-gray-dark;
+
+  h2, h3, .header__logo-name, .footer__base-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+}
+
+/* Header */
+.header {
+  background-color: $color-white;
+  color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  @include shadow(rgba($color-black, 0.1), 0, 4px, 6px);
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-img {
+      height: 100px; // Reducir tamaño del logo
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: column;
+
+      &--main {
+        font-size: 2rem; // Ajustar tamaño
+      }
+
+      &--secondary {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+
+    &-list {
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        display: inline-block;
+
+        &-link {
+          text-decoration: none;
+          color: $color-black;
+          font-size: 1rem;
+
+          &:hover {
+            color: $color-gold;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsividad del Header */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+
+    &__navbar {
+      &-list {
+        flex-direction: column; // Apilar elementos
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+/* Sección Video */
+.video-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: $color-white; /* Fondo del contenedor */
+    margin-bottom: 20px; /* Margen inferior gris claro */
+    flex-wrap: nowrap; /* Evitamos que se apilen los elementos */
+    max-height: 400px; /* Altura máxima de la sección */
+    overflow: hidden; /* Evita desbordamientos */
+  
+    &__text {
+      width: 50%; /* La mitad de la sección */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-white; /* Fondo blanco */
+      padding: 20px;
+      text-align: center;
+  
+      p {
+        font-size: 1.5rem;
+        color: $color-gold;
+        font-weight: 400;
+        text-align: center;
+        padding: 15px;
+        max-width: 80%;
+        border: 2px solid $color-gold;
+        border-radius: 10px;
+        background-color: $color-white;
+        @include shadow(rgba($color-black, 0.1), 0, 4px, 8px);
+      }
+    }
+  
+    &__video {
+      width: 50%; /* Ocupa la otra mitad */
+      height: auto; /* Ajusta automáticamente según contenido */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-white; /* Fondo blanco */
+      padding: 10px;
+  
+      video {
+        width: 100%; /* Ajusta el ancho disponible */
+        max-width: 500px; /* Límite máximo de ancho */
+        max-height: 400px; /* Límite máximo de altura */
+        object-fit: contain; /* Asegura que todo el video sea visible sin recortes */
+        border-radius: 10px;
+        @include shadow(rgba($color-black, 0.2), 0, 4px, 8px);
+      }
+    }
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .video-section {
+      flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+      align-items: center;
+      max-height: none; /* Permite mayor flexibilidad */
+    }
+  
+    .video-section__text, .video-section__video {
+      width: 100%; /* Ocupa todo el ancho disponible */
+    }
+  
+    .video-section__video video {
+      width: 100%; /* Ajusta el video al ancho completo en pantallas pequeñas */
+      max-height: 300px; /* Ajusta la altura máxima */
+    }
+  }
+  
+  
+  .implants-wrapper {
+    border-top: 2px solid lighten($color-gray-medium, 40%);
+    border-bottom: 2px solid lighten($color-gray-medium, 40%);
+    width: 100vw; /* Asegura el ancho completo */
+    margin: 0; /* Elimina márgenes externos */
+    padding: 0;
+  }
+  
+  .implants {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 600px;
+    background-color: $color-white;
+    padding: 20px;
+  
+    &__text, &__form {
+      width: 50%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: $color-white;
+    }
+  
+    &__form {
+      border-right: 2px solid lighten($color-gray-medium, 40%);
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+  
+        input, select, button {
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid $color-gray-medium;
+          border-radius: 5px;
+        }
+  
+        button {
+          background-color: $color-gold;
+          color: $color-white;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: $color-gold-dark;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .implants-wrapper {
+      border-top: 2px solid lighten($color-gray-medium, 40%);
+      border-bottom: 2px solid lighten($color-gray-medium, 40%);
+    }
+  
+    .implants {
+      flex-direction: column;
+      height: auto;
+  
+      &__text, &__form {
+        width: 100%;
+        padding: 10px;
+      }
+  
+      &__form {
+        border-right: none;
+        border-top: 2px solid lighten($color-gray-medium, 40%);
+      }
+    }
+  }
+    
+    
+
+/* Tratamientos */
+.treatments {
+  font-family: 'Poppins', sans-serif; /* Asegura la tipografía para todo el contenedor */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: $color-white;
+
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    width: 100%; /* Título ocupa todo el ancho */
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; /* Garantiza la consistencia en el título */
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 20px); /* Cuatro elementos por fila en desktop */
+    max-width: 280px; /* Tamaño máximo para uniformidad */
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Asegura la tipografía también aquí */
+
+    &-image {
+      width: 100%;
+      aspect-ratio: 4/3; /* Mantiene proporción 4:3 */
+      object-fit: cover; /* Asegura que las imágenes se ajusten al contenedor */
+      margin-bottom: 10px;
+      border: 3px solid lighten($color-gray-light, 5%);
+      border-radius: 10px;
+
+      &:hover {
+        transform: scale(1.05);
+        @include shadow(rgba($color-black, 0.3), 0, 4px, 15px);
+      }
+    }
+
+    &-subtitle {
+      font-size: 1rem;
+      color: $color-gray-dark;
+      margin: 0;
+      font-family: 'Poppins', sans-serif; /* Asegura la tipografía aquí también */
+    }
+  }
+}
+
+/* Responsividad para Tratamientos */
+@media (max-width: 1024px) {
+  .treatments {
+    gap: 15px;
+
+    &__item {
+      width: calc(33.33% - 15px); /* Tres elementos por fila */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .treatments {
+    gap: 10px;
+
+    &__item {
+      width: calc(50% - 10px); /* Dos elementos por fila */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .treatments {
+    &__item {
+      width: 100%; /* Un elemento por fila */
+    }
+  }
+}
+
+
+/*Vista Nosotros*/
+.team {
+  text-align: center; /* Centra todo el contenido */
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  &__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta automáticamente el número de columnas */
+    grid-template-rows: auto; /* Filas automáticas */
+    gap: 20px;
+    justify-items: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+  }
+
+  &__member {
+    text-align: center;
+    max-width: 300px; /* Ancho máximo para mantener consistencia */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    align-items: center; /* Centra horizontalmente el contenido */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+
+    &:hover {
+      transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    }
+  }
+
+  &__member-photo {
+    width: 150px; /* Tamaño uniforme de las fotos */
+    height: 150px;
+    object-fit: cover; /* Asegura que las fotos mantengan su proporción */
+    border-radius: 50%; /* Bordes redondeados */
+    margin-bottom: 10px;
+  }
+
+  &__member-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  &__member-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* Responsividad */
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    &__member {
+      max-width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    &__member-photo {
+      width: 120px; /* Ajusta el tamaño de la foto en pantallas más pequeñas */
+      height: 120px;
+    }
+
+    &__member-name {
+      font-size: 1rem;
+    }
+
+    &__member-description {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__member-photo {
+      width: 100px; /* Tamaño más pequeño para fotos en pantallas muy pequeñas */
+      height: 100px;
+    }
+
+    &__member-name {
+      font-size: 0.9rem;
+    }
+
+    &__member-description {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+
+/* Vista de procedimientos  */
+.procedmientos {
+  padding: 20px;
+  background-color: #f9f9f9; // Fondo claro para la sección
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Dos columnas
+    gap: 20px; // Espacio entre elementos
+    width: 100%;
+    max-width: 1200px; // Ancho máximo para centrar contenido
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05); // Aumenta ligeramente el tamaño
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+    }
+
+    &-image {
+      width: 150px; // Tamaño del círculo
+      height: 150px;
+      border-radius: 50%; // Hacerlo circular
+      object-fit: cover; // Ajusta la imagen dentro del círculo
+      margin-bottom: 15px;
+      border: 3px solid #ddd;
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      word-wrap: break-word; // Asegura que el texto se ajuste al ancho del contenedor
+      overflow-wrap: break-word; // Compatibilidad adicional
+      max-height: 200px; // Límite de altura para texto
+      overflow-y: auto; // Agrega desplazamiento vertical si el texto es muy largo
+    }
+  }
+
+  /* Responsividad */
+  @media (max-width: 768px) {
+    &__container {
+      grid-template-columns: 1fr; // Una columna para pantallas pequeñas
+    }
+
+    &__item {
+      padding: 15px;
+
+      &-image {
+        width: 120px; // Reducir tamaño de imagen en móviles
+        height: 120px;
+      }
+
+      &-title {
+        font-size: 1.2rem;
+      }
+
+      &-text {
+        font-size: 0.9rem;
+        max-height: none; // Sin límite en pantallas pequeñas
+        overflow-y: visible; // El texto se muestra completo
+      }
+    }
+  }
+}
+
+
+/*Sección de promociones*/
+.promociones {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  &__title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column; /* Promociones en una sola columna */
+    gap: 20px; /* Espaciado entre las promociones */
+    align-items: center; /* Centra las promociones horizontalmente */
+  }
+
+  &__contenedor {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 600px; /* Ancho máximo */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05); /* Efecto de realce al pasar el cursor */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      width: auto; /* Mantiene el ancho real de la imagen */
+      height: auto; /* Mantiene la proporción original */
+      max-width: 100%; /* Ajusta la imagen al contenedor */
+      max-height: 300px; /* Límite de altura */
+      object-fit: contain; /* Escala la imagen manteniendo su proporción */
+      border-radius: 10px; /* Bordes redondeados */
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .promociones {
+    &__contenedor {
+      padding: 15px;
+
+      img {
+        max-height: 250px; /* Ajusta la altura para pantallas medianas */
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .promociones {
+    &__contenedor {
+      padding: 10px;
+
+      img {
+        max-height: 200px; /* Ajusta la altura para pantallas pequeñas */
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

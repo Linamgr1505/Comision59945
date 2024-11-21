@@ -5,173 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="shortcut icon" href="./assets/logo-favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-</head>
-<body>
- <header>
-  <a href="#" class="logo">
-    <img src="./assets/logo.jpg" alt="logo maca" class="logo-img">
-    <div class="logo-nombre">
-      <span class="logo-maca">MACA</span>
-      <span class="logo-dental-group">DENTAL GROUP</span>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <a href="#" class="header__logo">
+        <img src="./assets/logo.jpg" alt="logo maca" class="header__logo-img">
+        <div class="header__logo-title">
+          <span class="header__logo-title--main">MACA</span>
+          <span class="header__logo-title--secondary">DENTAL GROUP</span>
+        </div>
+      </a>
+      <nav class="header__navbar">
+        <ul class="header__navbar-list">
+          <li class="header__navbar-list-item"><a href="./index.html" class="header__navbar-list-item-link">Inicio</a></li>
+          <li class="header__navbar-list-item"><a href="./Pages/citas.html" class="header__navbar-list-item-link">Pedir cita</a></li>
+          <li class="header__navbar-list-item"><a href="./Pages/tratamientos.html" class="header__navbar-list-item-link">Tratamientos</a></li>
+          <li class="header__navbar-list-item"><a href="./Pages/promociones.html" class="header__navbar-list-item-link">Promociones</a></li>
+          <li class="header__navbar-list-item"><a href="./Pages/nosotros.html" class="header__navbar-list-item-link">Nosotros</a></li>
+          <li class="header__navbar-list-item"><a href="./Pages/portal.html" class="header__navbar-list-item-link">Portal pacientes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sección Video -->
+       <div class="video-section">
+        <!-- Lado izquierdo con texto -->
+          <div class="video-section__text">
+           <p>Para nosotros tu salud oral es lo primero</p>
+         </div>
+    
+      <!-- Lado derecho con video -->
+        <div class="video-section__video">
+           <video autoplay loop controls>
+             <source src="../Codigo/assets/video-mujer.mp4" type="video/mp4">
+          Tu navegador no soporta el formato de video.
+            </video>
+         </div>
+       </div>
+
+    <!-- Sección Implantes -->
+    <div class="implants-wrapper">
+      <section class="implants">
+        <!-- Parte izquierda: Texto -->
+        <div class="implants__text">
+          <p>
+            <strong>Sonrisas duraderas con nuestros Implantes Dentales</strong><br><br>
+            En MACA DENTAL GROUP entendemos la importancia de los implantes dentales en la vida de las personas. Aquí la excelencia en el cuidado bucal se une a la innovación.<br><br>
+            Nuestro equipo de expertos en implantología está comprometido en ofrecer soluciones duraderas y personalizadas para restaurar tu sonrisa.<br><br>
+            Descubre cómo nuestros implantes dentales pueden mejorar tu calidad de vida y devolverte la confianza al masticar, hablar y sonreír.<br><br>
+            Agenda tu cita de valoración hoy mismo y da el primer paso hacia una sonrisa completa y saludable.
+          </p>
+        </div>
+    
+        <!-- Parte derecha: Formulario -->
+        <div class="implants__form">
+          <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+            <input type="text" placeholder="Número de Documento de Identidad" required>
+            <input type="tel" placeholder="Teléfono" required>
+            <input type="email" placeholder="Correo" required>
+            <select required>
+              <option value="" disabled selected>Horario de Contacto</option>
+              <option value="7-10 AM">7-10 AM</option>
+              <option value="10-12 PM">10-12 PM</option>
+              <option value="12-2 PM">12-2 PM</option>
+              <option value="2-4 PM">2-4 PM</option>
+            </select>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
     </div>
-  </a>
-  <div class="navbar">
-    <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="./Pages/citas.html">Pedir cita</a></li>
-      <li><a href="./Pages/tratamientos.html">Tratamientos</a></li>
-      <li><a href="./Pages/promociones.html">Promociones</a></li>
-      <li><a href="./Pages/nosotros.html">Nosotros</a></li>
-      <li><a href="./Pages/portal.html">Portal pacientes</a></li>
-    </ul>
-  </div>
- </header>
+    
+    
+    <!-- Sección Tratamientos -->
+    <h2 class="treatments__title">Tratamientos</h2>
+    <section class="treatments">
+      <!-- Sub-secciones -->
+      <div class="treatments__item">
+        <img src="./assets/blanqueamiento.png" alt="Blanqueamiento" class="treatments__item-image">
+        <h3 class="treatments__item-subtitle">Blanqueamiento</h3>
+      </div>
+      <div class="treatments__item">
+        <img src="./assets/disenosonrisa.png" alt="Diseño de sonrisa" class="treatments__item-image">
+        <h3 class="treatments__item-subtitle">Diseño de sonrisa</h3>
+      </div>
+      <div class="treatments__item">
+        <img src="./assets/implantes.png" alt="Implantes" class="treatments__item-image">
+        <h3 class="treatments__item-subtitle">Implantes</h3>
+      </div>
+      <div class="treatments__item">
+        <img src="./assets/ortodoncia.png" alt="Ortodoncia" class="treatments__item-image">
+        <h3 class="treatments__item-subtitle">Ortodoncia</h3>
+      </div>
+    </section>    
 
-  <!-- Sección video -->
-  <div class="seccion-salud-oral">
-    <!-- Lado izquierdo con texto centrado -->
-    <div class="lado-izquierdovideo">
-      <p>Para nosotros tu salud oral es lo primero</p>
-    </div>
-
-    <!-- Lado derecho con video centrado -->
-    <div class="lado-derechovideo">
-      <!-- Puedes reemplazar el src con el enlace a tu propio video -->
-      <video autoplay loop controls>
-        <source src="./assets/video-mujer.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
- <h2>Tratamientos</h2>
- <section class="seccion-tratamientos">
-      <!-- Subsección 1 -->
-    <div class="tratamiento-item">
-        <img src="./assets/blanqueamiento.png" alt="Blanqueamiento">
-        <h3>Blanqueamiento</h3>
-    </div>
-      <!-- Subsección 2 -->
-    <div class="tratamiento-item">
-        <img src="./assets/disenosonrisa.png" alt="Diseño de sonrisa">
-        <h3>Diseño de sonrisa</h3>
-    </div>
-      <!-- Subsección 3 -->
-    <div class="tratamiento-item">
-        <img src="./assets/implantes.png" alt="Implantes">
-        <h3>Implantes</h3>
-    </div>
-      <!-- Subsección 4 -->
-    <div class="tratamiento-item">
-        <img src="./assets/ortodoncia.png" alt="Ortodoncia">
-        <h3>Ortodoncia</h3>
-    </div>
- </section>
-
- <!-- Sección principal de Implantes Dentales -->
- <div class="seccion-implantes">
-  <!-- Lado izquierdo con texto -->
-  <div class="lado-izquierdo">
-    <p>
-      <strong>Sonrisas duraderas con nuestros Implantes Dentales</strong><br><br>
-        En MACA DENTAL GROUP entendemos la importancia de los implantes dentales en la vida de las personas. Aquí la excelencia en el cuidado bucal se une a la innovación.<br><br>
-        Nuestro equipo de expertos en implantología está comprometido en ofrecer soluciones duraderas y personalizadas para restaurar tu sonrisa.<br><br>
-        Descubre cómo nuestros implantes dentales pueden mejorar tu calidad de vida y devolverte la confianza al masticar, hablar y sonreír.<br><br>
-        Agenda tu cita de valoración hoy mismo y da el primer paso hacia una sonrisa completa y saludable.
-    </p>
-  </div>
-
-    <!-- Lado derecho con formulario -->
-  <div class="lado-derecho">
-    <form class="formulario-contacto">
-      <input type="text" placeholder="Nombre" required>
-      <input type="text" placeholder="Apellido" required>
-      <input type="text" placeholder="Número de Documento de Identidad" required>
-      <input type="tel" placeholder="Teléfono" required>
-      <input type="email" placeholder="Correo" required>
-
-     <!-- Menú desplegable de Horario de Contacto -->
-      <select required>
-        <option value="" disabled selected>Horario de Contacto</option>
-        <option value="7-10 AM">7-10 AM</option>
-        <option value="10-12 PM">10-12 PM</option>
-        <option value="12-2 PM">12-2 PM</option>
-        <option value="2-4 PM">2-4 PM</option>
-      </select>
-
-      <!-- Menú desplegable de Servicio Odontológico -->
-      <select required>
-        <option value="" disabled selected>Servicio Odontológico</option>
-        <option value="Ortodoncia">Ortodoncia</option>
-        <option value="Diseño de sonrisa">Diseño de sonrisa</option>
-        <option value="Implantes">Implantes</option>
-        <option value="Rehabilitación oral">Rehabilitación oral</option>
-        <option value="Endodoncia">Endodoncia</option>
-        <option value="Otros tratamientos">Otros tratamientos</option>
-      </select>
-
-      <!-- Menú desplegable de Ciudad del Contacto -->
-      <select required>
-        <option value="" disabled selected>Ciudad del Contacto</option>
-        <option value="Bogotá">Bogotá</option>
-        <option value="Medellín">Medellín</option>
-        <option value="Cali">Cali</option>
-        <option value="Barranquilla">Barranquilla</option>
-        <option value="Cartagena">Cartagena</option>
-        <!-- Puedes añadir más ciudades según sea necesario -->
-      </select>
-
-      <!-- Botón de Enviar -->
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-</div>
-
-
-
- <div class="Imagenes-inferiores">
-  <div>
-    <img src="./assets/muela.png" class="imagen-item" alt="Muela">
-  </div>
-  <div>
-    <img src="./assets/photo-output.jpg" class="imagen-item" alt="Sonrisa">
-  </div>
-  <div>
-    <img src="./assets/implante-bajo.png" class="imagen-item" alt="Implante bajo">
-  </div>
- </div>
-
- <form action="procesar_opinion.php" method="post">
-  <fieldset>
-    <legend>¿Nos visitaste? Cuéntanos tu opinión.</legend>
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-    <label for="comentario">Comentario:</label><br>
-    <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br> 
-    <input type="submit" value="Enviar">
-  </fieldset>
- </form><br>
-<footer>
-  <div class="footer-contenedor">
-    <div class="social-icons">
-      <a href=""><i class="fa-brands fa-facebook"></i></a>
-      <a href=""><i class="fa-brands fa-instagram"></i></a>
-      <a href=""><i class="fa-brands fa-tiktok"></i></a>
-    </div>
-    <div class="footer-nav">
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./Pages/citas.html">Pedir cita</a></li>
-        <li><a href="./Pages/tratamientos.html">Tratamientos</a></li>
-        <li><a href="./Pages/promociones.html">Promociones</a></li>
-        <li><a href="./Pages/nosotros.html">Nosotros</a></li>
-      </ul>
-    </div>
-</div>
-<div class="footer-base">
-  <p>Diseñado por Lina Gil Rodríguez</p>
-</div>
-</footer> 
-</body>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__social-icons">
+          <a href="#" class="footer__social-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="footer__social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer__social-link"><i class="fa-brands fa-tiktok"></i></a>
+        </div>      
+        <ul class="footer__container-nav-list">
+          <li class="footer__container-nav-list-item"><a href="./index.html" class="footer__container-nav-list-item-link">Inicio</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/citas.html" class="footer__container-nav-list-item-link">Pedir cita</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/tratamientos.html" class="footer__container-nav-list-item-link">Tratamientos</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/promociones.html" class="footer__container-nav-list-item-link">Promociones</a></li>
+          <li class="footer__container-nav-list-item"><a href="./Pages/nosotros.html" class="footer__container-nav-list-item-link">Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer__base">
+        <p class="footer__base-text">Diseñado por Lina Gil Rodríguez</p>
+      </div>
+    </footer>
+  </body>
 </html>
