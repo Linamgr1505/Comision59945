@@ -2,6 +2,7 @@
 @import "base/reset";
 @import "base/fonts";
 @import "layout/button";
+@import "layout/header";
 @import "layout/footer";
 
 
@@ -28,7 +29,6 @@ body {
     font-weight: bold;
   }
 }
-
 /* Header */
 .header {
   background-color: $color-white;
@@ -54,10 +54,12 @@ body {
 
       &--main {
         font-size: 2rem; // Ajustar tamaño
+        font-weight: bold;
       }
 
       &--secondary {
         font-size: 1rem;
+        font-weight: bold;
       }
     }
   }
@@ -107,7 +109,6 @@ body {
     }
   }
 }
-
 
 /* Sección Video */
 .video-section {
@@ -642,6 +643,217 @@ body {
     }
   }
 }
+/* Vista de portal*/
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 20px;
+  background-color: #f9f9f9;
+  flex-direction: column; /* Asegura que el título esté encima del formulario */
+
+  &__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem; /* Ajusta el tamaño del título */
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px; /* Espacio reducido entre el título y el formulario */
+  }
+
+  &__form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px; /* Tamaño más compacto */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduce el espacio entre los elementos del formulario */
+  }
+
+  &__label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem; /* Texto más pequeño */
+    color: #555;
+    margin-bottom: 3px; /* Espacio reducido entre la etiqueta y la casilla */
+  }
+
+  &__input {
+    padding: 8px; /* Casillas más pequeñas */
+    font-size: 0.9rem; /* Texto más pequeño */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #d4af37; /* Color dorado */
+      box-shadow: 0 0 4px rgba(212, 175, 55, 0.5); /* Sombra dorada */
+    }
+  }
+
+  &__button {
+    padding: 8px;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #d4af37; /* Botón dorado */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #b18e2a; /* Dorado oscuro al pasar el mouse */
+    }
+  }
+
+  /* Responsividad */
+  @media (max-width: 768px) {
+    &__form {
+      padding: 15px;
+    }
+
+    &__title {
+      font-size: 1.3rem;
+    }
+
+    &__input, &__button {
+      font-size: 0.8rem;
+      padding: 6px; /* Ajuste adicional para móviles */
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__form {
+      padding: 10px;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__input, &__button {
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+  }
+}
+/* Vista de citas */
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Centra verticalmente
+  background-color: $color-gray-light; // Fondo claro para la página
+  padding: 20px;
+
+  &__fieldset {
+    width: 100%;
+    max-width: 500px; // Ancho máximo para el formulario
+    background-color: $color-white; // Fondo blanco para el formulario
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+    border: 1px solid $color-gray-medium; // Borde ligero para definición
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $color-gray-dark;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &__legend {
+    font-size: 1.2rem;
+    color: $color-gold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  &__label {
+    display: block;
+    font-size: 1rem;
+    color: $color-gray-dark;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: $color-gray-dark;
+    background-color: $color-gray-light;
+    border: 1px solid $color-gray-medium;
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+    &:focus {
+      outline: none;
+      border-color: $color-gold;
+      box-shadow: 0 0 5px rgba(212, 175, 55, 0.5); // Resalta el input
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: $color-white;
+    background-color: $color-gold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $color-gold-dark;
+    }
+  }
+
+  // Responsividad
+  @media (max-width: 768px) {
+    &__fieldset {
+      padding: 15px;
+    }
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    &__legend {
+      font-size: 1rem;
+    }
+
+    &__button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__legend {
+      font-size: 0.9rem;
+    }
+
+    &__button {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  }
+}
+
+
 
 
 

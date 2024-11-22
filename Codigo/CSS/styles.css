@@ -172,9 +172,11 @@ body h2, body h3, body .header__logo-name, body .footer__base-text {
 }
 .header__logo-title--main {
   font-size: 2rem;
+  font-weight: bold;
 }
 .header__logo-title--secondary {
   font-size: 1rem;
+  font-weight: bold;
 }
 .header__navbar {
   display: flex;
@@ -664,6 +666,187 @@ body h2, body h3, body .header__logo-name, body .footer__base-text {
   }
   .promociones__contenedor p {
     font-size: 0.8rem;
+  }
+}
+/* Vista de portal*/
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 20px;
+  background-color: #f9f9f9;
+  flex-direction: column; /* Asegura que el título esté encima del formulario */
+  /* Responsividad */
+}
+.login__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem; /* Ajusta el tamaño del título */
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px; /* Espacio reducido entre el título y el formulario */
+}
+.login__form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px; /* Tamaño más compacto */
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduce el espacio entre los elementos del formulario */
+}
+.login__label {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem; /* Texto más pequeño */
+  color: #555;
+  margin-bottom: 3px; /* Espacio reducido entre la etiqueta y la casilla */
+}
+.login__input {
+  padding: 8px; /* Casillas más pequeñas */
+  font-size: 0.9rem; /* Texto más pequeño */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.login__input:focus {
+  border-color: #d4af37; /* Color dorado */
+  box-shadow: 0 0 4px rgba(212, 175, 55, 0.5); /* Sombra dorada */
+}
+.login__button {
+  padding: 8px;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: #d4af37; /* Botón dorado */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login__button:hover {
+  background-color: #b18e2a; /* Dorado oscuro al pasar el mouse */
+}
+@media (max-width: 768px) {
+  .login__form {
+    padding: 15px;
+  }
+  .login__title {
+    font-size: 1.3rem;
+  }
+  .login__input, .login__button {
+    font-size: 0.8rem;
+    padding: 6px; /* Ajuste adicional para móviles */
+  }
+}
+@media (max-width: 480px) {
+  .login__form {
+    padding: 10px;
+  }
+  .login__title {
+    font-size: 1.1rem;
+  }
+  .login__input, .login__button {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+}
+
+/* Vista de citas */
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+.contact-form__fieldset {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #afafaf;
+}
+.contact-form__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.contact-form__legend {
+  font-size: 1.2rem;
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.contact-form__label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+.contact-form__input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.contact-form__input:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+.contact-form__button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d4af37;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form__button:hover {
+  background-color: #b18e2a;
+}
+@media (max-width: 768px) {
+  .contact-form__fieldset {
+    padding: 15px;
+  }
+  .contact-form__title {
+    font-size: 1.2rem;
+  }
+  .contact-form__legend {
+    font-size: 1rem;
+  }
+  .contact-form__button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-form__title {
+    font-size: 1rem;
+  }
+  .contact-form__legend {
+    font-size: 0.9rem;
+  }
+  .contact-form__button {
+    font-size: 0.8rem;
+    padding: 6px;
   }
 }
 
