@@ -1,15 +1,12 @@
-// Función para mostrar mensajes en el DOM
-function mostrarMensaje(mensaje, tipo, elemento) {
-    let mensajeElemento = document.createElement("p");
-    mensajeElemento.textContent = mensaje;
-    mensajeElemento.className = tipo === "error" ? "mensaje-error" : "mensaje-exito";
-    
-    let contenedor = document.querySelector(elemento);
-    contenedor.appendChild(mensajeElemento);
-    
-    setTimeout(() => {
-        mensajeElemento.remove();
-    }, 3000);
+// Función para mostrar notificaciones con SweetAlert2
+function mostrarMensaje(mensaje, tipo) {
+    Swal.fire({
+        text: mensaje,
+        icon: tipo === "error" ? "error" : "success",
+        confirmButtonText: "OK",
+        timer: 3000,
+        showConfirmButton: false
+    });
 }
 
 // Obtener datos desde localStorage o JSON externo
@@ -22,7 +19,7 @@ function cargarUsuarios() {
                 localStorage.setItem("usuarios", JSON.stringify(data));
                 usuarios = data;
             })
-            .catch(error => console.error("Error cargando usuarios:", error));
+            .catch(() => mostrarMensaje("Error cargando usuarios", "error"));
     }
     return usuarios || [];
 }
@@ -45,7 +42,7 @@ function registrarUsuario(event) {
     let nuevoUsuario = { id: Date.now(), nombre, apellido, correo, contraseña, citas: [] };
     usuarios.push(nuevoUsuario);
     guardarUsuarios();
-    mostrarMensaje("Usuario registrado exitosamente", "exito", "#registroForm");
+    mostrarMensaje("Usuario registrado exitosamente", "success");
     document.getElementById("registroForm").reset();
 }
 
@@ -62,9 +59,9 @@ function programarCita(event) {
         usuario.citas.push(fecha);
         guardarUsuarios();
         mostrarCitas(correo);
-        mostrarMensaje("Cita programada exitosamente", "exito", "#citaForm");
+        mostrarMensaje("Cita programada exitosamente", "success");
     } else {
-        mostrarMensaje("Usuario no encontrado", "error", "#citaForm");
+        mostrarMensaje("Usuario no encontrado", "error");
     }
 }
 
@@ -94,7 +91,7 @@ function cancelarCita(correo, index) {
         usuario.citas.splice(index, 1);
         guardarUsuarios();
         mostrarCitas(correo);
-        mostrarMensaje("Cita cancelada exitosamente", "exito", "#listaCitas");
+        mostrarMensaje("Cita cancelada exitosamente", "success");
     }
 }
 
@@ -109,7 +106,7 @@ document.querySelector(".contact-form").addEventListener("submit", function(even
     contactos.push({ nombre, telefono, email });
     localStorage.setItem("contactos", JSON.stringify(contactos));
     
-    mostrarMensaje("Formulario enviado exitosamente", "exito", ".contact-form");
+    mostrarMensaje("Formulario enviado exitosamente", "success");
     document.querySelector(".contact-form").reset();
 });
 
