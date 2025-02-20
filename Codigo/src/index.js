@@ -1,90 +1,69 @@
-// Variables, constantes y arrays
-const usuarios = [
-    { id: 1, nombre: "Juan Perez", citas: ["2024-12-20 10:00", "2024-12-25 14:00"] },
-    { id: 2, nombre: "Maria Lopez", citas: ["2024-12-22 09:00"] }
-];
+// Obtener datos desde localStorage o inicializar
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-// Función para mostrar el menú principal
-function mostrarMenu() {
-    let opcion;
-    do {
-        opcion = prompt(`Bienvenido al sistema dental\nSeleccione una opción:\n1. Ver citas\n2. Programar cita\n3. Cancelar cita\n4. Salir`);
-        switch (opcion) {
-            case "1":
-                verCitas();
-                break;
-            case "2":
-                programarCita();
-                break;
-            case "3":
-                cancelarCita();
-                break;
-            case "4":
-                alert("Gracias por usar el sistema. ¡Hasta luego!");
-                break;
-            default:
-                alert("Por favor, seleccione una opción válida.");
-        }
-    } while (opcion !== "4");
+// Función para guardar en localStorage
+function guardarUsuarios() {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
-// Función para ver citas
-function verCitas() {
-    const nombreUsuario = prompt("Ingrese su nombre:");
-    const usuario = usuarios.find(u => u.nombre.toLowerCase() === nombreUsuario.toLowerCase());
+// Función para registrar un usuario
+function registrarUsuario(event) {
+    event.preventDefault();
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let correo = document.getElementById("correo").value;
+    let contraseña = document.getElementById("contraseña").value;
+    
+    let nuevoUsuario = { id: Date.now(), nombre, apellido, correo, contraseña, citas: [] };
+    usuarios.push(nuevoUsuario);
+    guardarUsuarios();
+    alert("Usuario registrado exitosamente");
+    document.getElementById("registroForm").reset();
+}
 
+document.getElementById("registroForm").addEventListener("submit", registrarUsuario);
+
+// Función para programar una cita
+function programarCita(event) {
+    event.preventDefault();
+    let correo = document.getElementById("correoCita").value;
+    let fecha = document.getElementById("fechaCita").value;
+    let usuario = usuarios.find(u => u.correo === correo);
+    
     if (usuario) {
-        if (usuario.citas.length > 0) {
-            alert(`Citas programadas:\n${usuario.citas.join("\n")}`);
-        } else {
-            alert("No tiene citas programadas.");
-        }
+        usuario.citas.push(fecha);
+        guardarUsuarios();
+        mostrarCitas(correo);
     } else {
-        alert("Usuario no encontrado.");
+        alert("Usuario no encontrado");
     }
 }
 
-// Función para programar una cita
-function programarCita() {
-    const nombreUsuario = prompt("Ingrese su nombre:");
-    const usuario = usuarios.find(u => u.nombre.toLowerCase() === nombreUsuario.toLowerCase());
+document.getElementById("citaForm").addEventListener("submit", programarCita);
 
-    if (usuario) {
-        const nuevaCita = prompt("Ingrese la fecha y hora de la cita (YYYY-MM-DD HH:MM):");
-        if (confirm(`¿Desea programar la cita para ${nuevaCita}?`)) {
-            usuario.citas.push(nuevaCita);
-            alert("Cita programada exitosamente.");
-        }
+// Función para mostrar citas de un usuario
+function mostrarCitas(correo) {
+    let usuario = usuarios.find(u => u.correo === correo);
+    let citasContainer = document.getElementById("listaCitas");
+    citasContainer.innerHTML = "";
+    
+    if (usuario && usuario.citas.length > 0) {
+        usuario.citas.forEach((cita, index) => {
+            let citaItem = document.createElement("li");
+            citaItem.innerHTML = `${cita} <button onclick='cancelarCita("${correo}", ${index})'>Cancelar</button>`;
+            citasContainer.appendChild(citaItem);
+        });
     } else {
-        alert("Usuario no encontrado.");
+        citasContainer.innerHTML = "No tiene citas programadas.";
     }
 }
 
 // Función para cancelar una cita
-function cancelarCita() {
-    const nombreUsuario = prompt("Ingrese su nombre:");
-    const usuario = usuarios.find(u => u.nombre.toLowerCase() === nombreUsuario.toLowerCase());
-
+function cancelarCita(correo, index) {
+    let usuario = usuarios.find(u => u.correo === correo);
     if (usuario) {
-        if (usuario.citas.length > 0) {
-            const citasListado = usuario.citas.map((cita, index) => `${index + 1}. ${cita}`).join("\n");
-            const indiceCita = parseInt(prompt(`Seleccione la cita a cancelar:\n${citasListado}`)) - 1;
-
-            if (indiceCita >= 0 && indiceCita < usuario.citas.length) {
-                if (confirm(`¿Está seguro de que desea cancelar la cita: ${usuario.citas[indiceCita]}?`)) {
-                    usuario.citas.splice(indiceCita, 1);
-                    alert("Cita cancelada exitosamente.");
-                }
-            } else {
-                alert("Selección inválida.");
-            }
-        } else {
-            alert("No tiene citas programadas para cancelar.");
-        }
-    } else {
-        alert("Usuario no encontrado.");
+        usuario.citas.splice(index, 1);
+        guardarUsuarios();
+        mostrarCitas(correo);
     }
 }
-
-// Inicializar el sistema
-mostrarMenu();
