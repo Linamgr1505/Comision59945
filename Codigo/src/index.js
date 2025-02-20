@@ -31,6 +31,23 @@ function guardarUsuarios() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
+// Precargar datos en formularios
+function precargarFormulario(idFormulario, campos) {
+    let datosGuardados = JSON.parse(localStorage.getItem(idFormulario));
+    if (datosGuardados) {
+        campos.forEach(campo => {
+            if (datosGuardados[campo]) {
+                document.getElementById(campo).value = datosGuardados[campo];
+            }
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    precargarFormulario("registroForm", ["nombre", "apellido", "correo"]);
+    precargarFormulario("contactForm", ["nombre", "telefono", "email"]);
+});
+
 // Función para registrar un usuario
 function registrarUsuario(event) {
     event.preventDefault();
@@ -42,6 +59,7 @@ function registrarUsuario(event) {
     let nuevoUsuario = { id: Date.now(), nombre, apellido, correo, contraseña, citas: [] };
     usuarios.push(nuevoUsuario);
     guardarUsuarios();
+    localStorage.setItem("registroForm", JSON.stringify({ nombre, apellido, correo }));
     mostrarMensaje("Usuario registrado exitosamente", "success");
     document.getElementById("registroForm").reset();
 }
@@ -105,6 +123,7 @@ document.querySelector(".contact-form").addEventListener("submit", function(even
     let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
     contactos.push({ nombre, telefono, email });
     localStorage.setItem("contactos", JSON.stringify(contactos));
+    localStorage.setItem("contactForm", JSON.stringify({ nombre, telefono, email }));
     
     mostrarMensaje("Formulario enviado exitosamente", "success");
     document.querySelector(".contact-form").reset();
